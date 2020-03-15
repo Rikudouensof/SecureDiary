@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SecureDiary.EntryListPage"
+           
+              NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout
+                Orientation="Horizontal"
+                Grid.Column="10,10,10,00"
+                HorizontalOptions="Start">
+
+                <ImageButton Source="DiaryProfile2.png"
+                             HorizontalOptions="Start"
+                             BackgroundColor="Transparent"
+                             VerticalOptions="Center"
+                />
+
+                <StackLayout VerticalOptions="Center"
+                             Margin="00,5,00,00">
+
+                    <Label Text="Fredrick"
+                           VerticalOptions="Start" 
+                           HorizontalOptions="StartAndExpand" 
+                           x:Name="FirstnameLabel"
+                           TextColor="#2B335C"
+
+                    />
+                    <Label Text="Darkavich"
+                           x:Name="LastNameLabel"
+                           VerticalOptions="Start" 
+                           HorizontalOptions="StartAndExpand"
+                           Margin="00, -5,00,00"
+                           TextColor="#2B335C"
+                    />
+
+
+                </StackLayout>
+
+            </StackLayout>
+
+
+
+
+                <SearchBar x:Name="FilterListSerchbar" 
+                       HorizontalOptions="EndAndExpand"
+                       
+                       Margin="10,0,10,00"
+                       CancelButtonColor="#2B335C"
+                       TextColor="#2B335C"
+                       TextChanged="FilterListSerchbar_TextChanged"
+                       Grid.Column="1"
+                  />
+
+
+
+           
+
+            <ListView x:Name="EntriesListview"
+                           HasUnevenRows="True"
+                          Grid.Row="3"
+                           Grid.ColumnSpan="2"
+                           Margin="10,10,10,00"
+                      ItemSelected="EntriesListview_ItemSelected"
+                           IsPullToRefreshEnabled="False"
+                           Refreshing="EntriesListview_OnRefreshing"
+                           ItemsSource="{Binding Diaries}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+
+                            <Grid 
+                            >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+
+                                <StackLayout HorizontalOptions="Start"
+                                             Orientation="Horizontal">
+
+
+                                    <Label Text="{Binding DateOEntry}"
+                                           FontSize="Body"
+                                           FontAttributes="Bold"
+                                           Margin="00,08,00,00"
+                                           Opacity="0.5"
+                                           TextColor="#2B335C"/>
+                                </StackLayout>
+
+
+                                <BoxView CornerRadius="8"
+                                         Grid.Row="1"
+                                         BackgroundColor="White"/>
+
+
+                                <Label Grid.Row="1"
+                                       Margin="20"
+                                       Text="{Binding Content}"
+                                       LineBreakMode="WordWrap"
+                                       TextColor="#2B335C"/>
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+
+
+            <BoxView BackgroundColor="White"
+                     Grid.Row="4"
+                     Grid.ColumnSpan="2"
+                     Margin="0"
+                     
+                     HorizontalOptions="FillAndExpand"/>
+
+
+            <StackLayout HorizontalOptions="CenterAndExpand"
+                         Grid.Row="4"
+                         Grid.ColumnSpan="2"
+                         Margin="10,00,10,00"
+                         Orientation="Horizontal"
+                         Padding="0"
+                         >
+
+
+                <ImageButton Source="Write555.png"
+                             HorizontalOptions="Center"
+                             x:Name="NewEntryImageButton"
+                             Padding="0"
+                             Margin="10,00,20,00"
+                             BackgroundColor="Transparent"
+                             Clicked="NewEntryImageButton_OnClicked"
+                           
+                />
+
+                <ImageButton Source="DiaryCallender22.png"
+                             HorizontalOptions="Center"
+                             x:Name="CalenderImageButton"
+                             Padding="0"
+                             Margin="10,00,20,00"
+                             BackgroundColor="Transparent"
+                           Clicked="CalenderImageButton_OnClicked"
+                />
+
+
+
+
+
+                <ImageButton Source="DiaryList2.png"
+                             HorizontalOptions="Center"
+                             x:Name="OldEntryImageButton"
+                             Margin="10,00,20,00"
+                             BackgroundColor="Transparent"
+                             Clicked="OldEntryImageButton_OnClicked"
+                             IsEnabled="False"
+                             Opacity="0.5"
+                />
+
+
+                <ImageButton Source="Mindstate.png"
+                             HorizontalOptions="Center"
+                             x:Name="MoodImageButton"
+                             Margin="10,00,20,00"
+                             BackgroundColor="Transparent"
+                             Clicked="MoodImageButton_OnClicked"
+                            
+                />
+
+
+
+
+                <ImageButton Source="DiaryProfile2.png"
+                             HorizontalOptions="Center"
+                             x:Name="ProfileImageButton"
+                             Margin="10,00,20,00"
+                            Clicked="ProfileImageButton_OnClicked"
+                             BackgroundColor="Transparent"
+                             
+                            />
+
+
+
+
+            </StackLayout>
+
+        </Grid>
+
+
+
+        
+        
+    </ContentPage.Content>
+</ContentPage>

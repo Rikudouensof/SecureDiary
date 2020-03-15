@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SecureDiary.EntryDetails"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+
+            <BoxView Color="#2B335C" 
+                     HorizontalOptions="Fill" 
+                     HeightRequest="40"/>
+
+            <Label Text="{Binding Title}"
+                   TextColor="White"
+                   BackgroundColor="Transparent"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="Body"
+                   FontAttributes="Bold"/>
+
+
+            <ScrollView  Grid.Row="1"
+                         HorizontalScrollBarVisibility="Never"
+                         VerticalScrollBarVisibility="Default">
+                <Frame CornerRadius="35"
+                   BorderColor="#E88A60"
+                   BackgroundColor="#2B335C"
+                   Margin="10"
+                  >
+                    <StackLayout 
+                                     BackgroundColor="#2B335C"
+                                    Margin="10"
+                                         >
+                        <Label Text="{Binding DateOEntry}"
+                                       x:Name="DateLabelCorasel"
+                                       TextColor="#FAFAFA"
+                                       FontSize="Title"
+                                       FontAttributes="Bold"
+                                       Margin="00,00,00,30"/>
+
+
+
+                        <Label Text="{Binding Title}"
+                                       x:Name="TitleLabelCorasel"
+                                       TextColor="#FAFAFA"
+                                       FontSize="Subtitle"
+                                       FontAttributes="Bold"
+                                       HorizontalTextAlignment="Center"
+                                       Margin="00,00,00,-20"
+                                       />
+
+                        <BoxView BackgroundColor="#E88A60" Margin="20" HeightRequest="2"/>
+
+                        <Label Text="{Binding Content}"
+                                       x:Name="ContentLabelCorasel"
+                                       TextColor="#FAFAFA"
+                                       FontSize="Default"
+                                       FontAttributes="Bold"
+                                      FontFamily="{StaticResource Yanone}"
+                                       />
+
+
+
+
+
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+          
+
+
+
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="Transparent"
+                         Grid.Row="2"
+                         HorizontalOptions="Center">
+                <ImageButton x:Name="UpdateEntryImageButton"
+                             Source="DiaryUpdate.png"
+                             Margin="10,10,10,5"
+                             Clicked="UpdateEntryImageButton_Clicked"
+                             />
+
+                <ImageButton x:Name="DeleteEntryImageButton"
+                             Source="DiaryDelete.png"
+                             Margin="10,10,10,5"
+                             Clicked="DeleteEntryImageButton_Clicked"
+                             />
+            </StackLayout>
+
+
+          
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

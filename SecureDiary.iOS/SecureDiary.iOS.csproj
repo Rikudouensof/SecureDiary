@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{820C5436-A06D-4E99-AF0E-69598B4188B9}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SecureDiary.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>SecureDiary.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchInterpreter>-all</MtouchInterpreter>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.6.292</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\SecureDiary\SecureDiary.csproj">
+      <Project>{869E9592-0EE7-4897-9D19-EA84D5EFF188}</Project>
+      <Name>SecureDiary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Calender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryCallender22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryDate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryList2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryLogo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryProfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryProfile2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryProfilePic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryUpdate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryWrite2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DiaryWrite33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_003.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_004.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_005.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_006.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_007.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_008.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_009.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_010.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_012.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_013.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_014.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_015.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_016.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_017.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_018.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_019.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_020.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_021.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_022.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_023.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_part_025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Mindstate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Write555.png" />
+  </ItemGroup>
+</Project>

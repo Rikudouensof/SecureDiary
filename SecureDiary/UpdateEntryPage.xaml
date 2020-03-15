@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SecureDiary.UpdateEntryPage"
+              NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <BoxView BackgroundColor="#2B335C"/>
+
+            <StackLayout Margin="40"
+                         Grid.Row="1"
+                         VerticalOptions="Center">
+                <Entry x:Name="TitleEntry"
+                       TextColor="#2B335C"
+                       Placeholder="Title"
+                       Text="{Binding Title}"
+                     />
+
+
+
+                <Editor x:Name="ContentEntry"
+                       TextColor="#2B335C"   
+                       Placeholder="Enter Content:"
+                       VerticalOptions="CenterAndExpand"
+                       IsSpellCheckEnabled="True"
+                       IsTextPredictionEnabled="True"
+                                        HeightRequest="200"
+                        Text="{Binding Content}"
+                       
+                       />
+
+                <Button  x:Name="SaveButton"
+                         BorderRadius="8"
+                         BackgroundColor="#2B335C"
+                         Text="Update"
+                         TextColor="White"
+                         Clicked="SaveButton_Clicked"/>
+
+
+
+            </StackLayout>
+
+            <BoxView BackgroundColor="#2B335C" Grid.Row="2"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SecureDiary.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="Pacifico">
+                <On Platform="Android" Value="Pacifico-Regular.ttf#Open Sans" />
+                <On Platform="UWP" Value="/Assets/Pacifico-Regular.ttf#Open Sans" />
+                <On Platform="iOS" Value="Pacifico-Regular-Bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="Yanone">
+                <On Platform="Android" Value="YanoneKaffeesatz-VariableFont_wght.ttf#Open Sans" />
+                <On Platform="UWP" Value="/Assets/YanoneKaffeesatz-VariableFont_wght.ttf#Open Sans" />
+                <On Platform="iOS" Value="YanoneKaffeesatz-VariableFont_wght" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="Lazy">
+                <On Platform="Android" Value="Lazy Morning DEMO.otf#Open Sans" />
+                <On Platform="UWP" Value="/Assets/Lazy Morning DEMO.otf#Open Sans" />
+                <On Platform="iOS" Value="Lazy Morning DEMO.otf" />
+            </OnPlatform>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

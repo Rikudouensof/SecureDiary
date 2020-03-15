@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SecureDiary.ProfilePage"
+              NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+
+
+
+            </Grid.RowDefinitions>
+
+
+
+            <BoxView BackgroundColor="#2B335C" 
+                         Grid.Row="0" 
+                         VerticalOptions="FillAndExpand"/>
+
+            <ScrollView Grid.Row="3">
+                <Frame
+                         Margin="10"
+                         BackgroundColor="#E88A60"
+                BorderColor="#2B335C"
+                CornerRadius="35"
+                   
+                   >
+                    <StackLayout>
+                        <Image Source="DiaryProfilePic.png" 
+                       Margin="50"
+                           VerticalOptions="Start"
+                       />
+                        <Frame BackgroundColor="#2B335C"
+                           CornerRadius="35">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="Username: "
+                                       TextColor="White"
+                                       FontSize="Body"/>
+
+                                    <Label Text="{Binding UserName}"
+                                       x:Name="UsernameLabel"
+                                       TextColor="White"
+                                       FontSize="Body"/>
+                                </StackLayout>
+                                <BoxView HeightRequest="2" 
+                                     BackgroundColor="#E88A60"
+                                     CornerRadius="35"/>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="Last name: "
+                                       TextColor="White"
+                                       FontSize="Body"/>
+
+                                    <Label Text="{Binding LastName}"
+                                       x:Name="FirstnameLabel"
+                                       TextColor="White"
+                                       FontSize="Body"/>
+                                </StackLayout>
+
+
+                                <BoxView HeightRequest="2" 
+                                     BackgroundColor="#E88A60"
+                                     CornerRadius="35"/>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="First name: "
+                                       TextColor="White"
+                                       FontSize="Body"/>
+
+                                    <Label Text="{Binding FirstName}"
+                                       x:Name="LastnameLabel"
+                                       TextColor="White"
+                                       FontSize="Body"/>
+                                </StackLayout>
+
+                            </StackLayout>
+
+                        </Frame>
+
+                        <Frame BackgroundColor="#2B335C"
+                           CornerRadius="35">
+
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout >
+                                    <Label Text="500"
+                                           x:Name="WordsLabel"
+                                       TextColor="White"
+                                       FontSize="Title"
+                                       FontAttributes="Bold"
+                                           />
+                                    <Label Text="words"
+                                       TextColor="White"/>
+                                </StackLayout>
+                                <BoxView VerticalOptions="Fill" 
+                                     WidthRequest="2"
+                                     CornerRadius="35"
+                                     BackgroundColor="#E88A60"
+                                     Margin="5"
+                                 />
+                                <StackLayout >
+                                    <Label Text="23"
+                                       x:Name="TotalEntriesLabel"
+                                       TextColor="White"
+                                       FontSize="Title"
+                                       FontAttributes="Bold"/>
+                                    <Label Text="Entries"
+                                       TextColor="White"/>
+                                </StackLayout>
+
+                                <BoxView VerticalOptions="Fill" 
+                                     WidthRequest="2"
+                                     CornerRadius="35"
+                                     BackgroundColor="#E88A60"
+                                     Margin="5"
+                                 />
+                                <StackLayout >
+                                    <Label Text="23/02/3019"
+                                       x:Name="LastDateLabel"
+                                       TextColor="White"
+                                       FontSize="Title"
+                                       FontAttributes="Bold"/>
+                                    <Label Text="Last Entry date"
+                                       TextColor="White"/>
+                                </StackLayout>
+
+
+                            </StackLayout>
+
+                        </Frame>
+
+                        <Frame BackgroundColor="#2B335C"
+                           CornerRadius="35">
+                            <StackLayout>
+                                <StackLayout>
+                                    <Entry x:Name="ChangePasswordEntry"
+                                   Placeholder="Enter to change password"
+                                   PlaceholderColor="#2B335C"
+                                   TextColor="#2B335C"
+                                           PropertyChanging="ChangePasswordEntry_PropertyChanging"
+                                          BackgroundColor="#E88A60" />
+                                    <Entry x:Name="ChangeHintEntry"
+                                   Placeholder="Enter to new hint"
+                                   PlaceholderColor="#2B335C"
+                                   TextColor="#2B335C"
+                                           BackgroundColor="#E88A60"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <Button Text="Update"
+                                            x:Name="UpdateButton"
+                                    BorderRadius="8"
+                                    BackgroundColor="#E88A60"
+                                    BorderColor="#2B335C"
+                                    TextColor="#2B335C"
+                                    Clicked="Button_Clicked"
+                                    />
+                                </StackLayout>
+
+                            </StackLayout>
+                            
+                            
+                        </Frame>
+                    </StackLayout>
+
+
+
+
+
+
+
+                </Frame>
+
+            </ScrollView>
+           
+            <BoxView BackgroundColor="#2B335C" 
+                         Grid.Row="4" 
+                         VerticalOptions="FillAndExpand"
+                     />
+
+
+
+
+        </Grid>
+           
+    </ContentPage.Content>
+</ContentPage>

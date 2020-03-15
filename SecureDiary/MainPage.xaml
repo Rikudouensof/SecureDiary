@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SecureDiary.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="DiaryLogo2.png" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Aspect="AspectFit"/>
+
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     Grid.Row="1"
+                     >
+            <Button Text="SIGN IN"
+                    BackgroundColor="#2B335C"
+                    TextColor="White"
+                    BorderRadius="20"
+                    x:Name="SigninButton"
+                    Clicked="SigninButton_Clicked"
+                    />
+            <Button Text="SIGN UP"
+                    BackgroundColor="#2B335C"
+                    TextColor="White"
+                    BorderRadius="20"
+                    x:Name="SignupButton"
+                    Clicked="SignupButton_Clicked"
+                    />
+        </StackLayout>
+
+        <StackLayout  Grid.Row="2" Margin="0">
+            <Label Text="Who else but me is going to read these letters?"
+               TextColor="#2B335C"
+               HorizontalOptions="Center"
+                   Margin="0,0,0,-10"/>
+
+            <Label Text="― Anne Frank, The Diary of a Young Girl"
+               TextColor="#E88A60"
+               HorizontalOptions="End"
+                   Padding="00,00,05,00"/>
+        </StackLayout >
+      
+
+    </Grid>
+
+</ContentPage>
