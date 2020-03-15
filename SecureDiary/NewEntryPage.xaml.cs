@@ -45,5 +45,7 @@ namespace SecureDiary
             await Navigation.PopAsync();
 
         }
+
+    
     }
 }
