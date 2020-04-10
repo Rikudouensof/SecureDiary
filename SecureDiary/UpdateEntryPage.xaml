@@ -15,6 +15,23 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <BoxView BackgroundColor="#2B335C"/>
+            <StackLayout Orientation="Horizontal">
+
+                <ImageButton Source="LightBackImageButton.png"
+                             BackgroundColor="Transparent"
+                             Clicked="ImageButton_OnClicked"
+                />
+
+                <Label Text="Update" 
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       FontSize="Title"
+                       FontAttributes="Italic"
+                />
+
+
+            </StackLayout>
 
             <StackLayout Margin="40"
                          Grid.Row="1"
@@ -24,6 +41,8 @@
                        Placeholder="Title"
                        Text="{Binding Title}"
                      />
+
+                
 
 
 
@@ -40,16 +59,16 @@
 
                 <Button  x:Name="SaveButton"
                          BorderRadius="8"
-                         BackgroundColor="#2B335C"
+                         BorderColor="#2B335C"
                          Text="Update"
-                         TextColor="White"
+                         TextColor="#2B335C"
                          Clicked="SaveButton_Clicked"/>
 
 
 
             </StackLayout>
 
-            <BoxView BackgroundColor="#2B335C" Grid.Row="2"/>
+           
         </Grid>
     </ContentPage.Content>
 </ContentPage>

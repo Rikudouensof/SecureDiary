@@ -186,6 +186,10 @@ namespace SecureDiary
             ErrorLabel.Text = "Note: This your only window to password recovery";
         }
 
-       
+
+        private async void ImageButton_OnClicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
     }
 }

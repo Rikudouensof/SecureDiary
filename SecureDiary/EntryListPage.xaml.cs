@@ -83,20 +83,17 @@ namespace SecureDiary
             await Navigation.PushAsync(new NewEntryPage());
         }
 
-        private void CalenderImageButton_OnClicked(object sender, EventArgs e)
+   
+
+        private async void OldEntryImageButton_OnClicked(object sender, EventArgs e)
         {
+            await Navigation.PushAsync(new EntryListPage());
         }
 
-        private void OldEntryImageButton_OnClicked(object sender, EventArgs e)
-        {
-        }
 
-        private void MoodImageButton_OnClicked(object sender, EventArgs e)
+        private async void ProfileImageButton_OnClicked(object sender, EventArgs e)
         {
-        }
-
-        private void ProfileImageButton_OnClicked(object sender, EventArgs e)
-        {
+            await Navigation.PushAsync(new ProfilePage());
         }
     }
 }

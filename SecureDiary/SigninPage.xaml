@@ -5,31 +5,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SecureDiary.SigninPage"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
              >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+           
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+       
 
 
         <BoxView Color="#2B335C" 
                      HorizontalOptions="Fill" 
                      HeightRequest="40"/>
-        <!--<Label Text="SIGN UP" 
+
+        <StackLayout Orientation="Horizontal">
+
+            <ImageButton Source="LightBackImageButton.png"
+                         BackgroundColor="Transparent"
+                         Clicked="ImageButton_OnClicked"
+                         />
+
+            <Label Text="Sign In" 
                    TextColor="White"
                    VerticalOptions="Center"
                    HorizontalOptions="Center"
                    FontSize="Title"
                    FontAttributes="Italic"
-                   />-->
+            />
+
+
+        </StackLayout>
+        
 
 
 
@@ -40,10 +50,21 @@
                           Grid.Row="1"
                           BackgroundColor="Transparent">
 
+
+            <Label Text="" 
+                   TextColor="#E88A60"
+                  
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="Subtitle"
+                   x:Name="ErrorLabel"/>
+
+
             <Entry x:Name="UsernameEntry" 
-                       Placeholder="Username: " 
-                       PlaceholderColor="#2B335C"
-                       TextColor="#2B335C"/>
+                   Placeholder="Username: " 
+                   PlaceholderColor="#2B335C"
+                   TextColor="#2B335C"/>
 
            
 
@@ -58,8 +79,8 @@
            
 
             <Button Text="SIGN IN" 
-                        BackgroundColor="#2B335C"
-                        TextColor="White"
+                        BorderColor="#2B335C"
+                        TextColor="#2B335C"
                     BorderRadius="20"
                         FontSize="Large"
                     Clicked="Button_Clicked"/>
@@ -69,19 +90,8 @@
 
 
 
-        <BoxView Color="#2B335C" 
-                     HorizontalOptions="Fill" 
-                     HeightRequest="40"
-                     Grid.Row="2"/>
-
-        <Label Text="look here for errors" 
-                   TextColor="#E88A60"
-                   Grid.Row="0"
-                   HorizontalOptions="Center"
-                   FontAttributes="Bold"
-                   FontSize="Subtitle"
-                   x:Name="ErrorLabel"/>
-
+        
+       
 
      </Grid>
 

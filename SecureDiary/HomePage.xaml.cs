@@ -45,7 +45,7 @@ namespace SecureDiary
             //  TheOldPostSLider.SetBinding(ItemsView.ItemsSourceProperty, "quantico");
 
 
-            DayDateLabel.Text = DateTime.Now.ToString("dddd  MMMM yyyy");
+            DayDateLabel.Text = DateTime.Now.ToString("dddd dd MMMM yyyy");
 
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
             {
@@ -60,7 +60,47 @@ namespace SecureDiary
                 });
                 return true; // runs again, or false to stop
             });
-            
+
+
+
+
+            var random = new Random();
+            var questions = new List<string>{
+                "image_part_001.png",
+                "image_part_002.png",
+                "image_part_003.png",
+                "image_part_004.png",
+                "image_part_005.png",
+                "image_part_006.png",
+                "image_part_007.png",
+                "image_part_008.png",
+                "image_part_009.png",
+                "image_part_010.png",
+                "image_part_011.png",
+                "image_part_012.png",
+                "image_part_013.png",
+                "image_part_014.png",
+                "image_part_015.png",
+                "image_part_016.png",
+                "image_part_017.png",
+                "image_part_018.png",
+                "image_part_019.png",
+                "image_part_020.png",
+                "image_part_021.png",
+                "image_part_022.png",
+                "image_part_023.png",
+                "image_part_024.png",
+                "image_part_025.png"
+
+
+            };
+            int meeindex = random.Next(questions.Count);
+            BarnerImage.Source = questions[meeindex];
+
+
+
+
+
         }
 
         private async void NewEntryImageButton_Clicked(object sender, EventArgs e)
@@ -94,6 +134,7 @@ namespace SecureDiary
 
             TheOldPostSLider.ItemsSource = null;
             TheOldPostSLider.ItemsSource = quantico;
+            TheOldPostSLider.EndRefresh();
         }
 
         private void CalenderImageButton_OnClicked(object sender, EventArgs e)

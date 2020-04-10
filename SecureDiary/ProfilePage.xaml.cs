@@ -77,5 +77,20 @@ namespace SecureDiary
            
           
         }
+
+        private async void NewEntryImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NewEntryPage());
+        }
+
+        private async void OldEntryImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EntryListPage());
+        }
+
+        private async void ProfileImageButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProfilePage());
+        }
     }
 }

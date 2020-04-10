@@ -19,6 +19,11 @@ namespace SecureDiary
     {
         public string _dbPath;
         Diary DiaryObject;
+
+        List<string> FontList = new List<string>()
+        {"Pacifico","Yanone","Lazy","None" };
+
+        
         
         public EntryDetails( Diary diary)
         {
@@ -30,6 +35,7 @@ namespace SecureDiary
             var Username = Application.Current.Properties["UserName"].ToString();
             DiaryObject = diary;
             BindingContext = db.Table<Diary>().Where(m => m.Id.Equals(diary.Id)).FirstOrDefault();
+            FontPicker.ItemsSource = FontList;
         }
 
         protected override void OnAppearing()
@@ -58,6 +64,21 @@ namespace SecureDiary
             var Username = Application.Current.Properties["UserName"].ToString();
             db.Delete(DiaryObject);
             await Navigation.PopAsync();
+        }
+
+        private async void ImageButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
+        private void FontPicker_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Button_OnClicked(object sender, EventArgs e)
+        {
+            TextcontrolFrame.IsVisible = false;
         }
     }
 }

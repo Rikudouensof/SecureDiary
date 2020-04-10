@@ -100,5 +100,10 @@ namespace SecureDiary
                 return false;
             }
         }
+
+        private async void ImageButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,6 +46,11 @@ namespace SecureDiary
             db.Update(toSaveDIary);
             await Navigation.PopAsync();
 
+        }
+
+        private async void ImageButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
     }
 }

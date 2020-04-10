@@ -25,7 +25,7 @@
 
             <StackLayout
                 Orientation="Horizontal"
-                Grid.Column="10,10,10,00"
+                Margin="10,10,10,00"
                 HorizontalOptions="Start">
 
                 <ImageButton Source="DiaryProfile2.png"
@@ -80,7 +80,7 @@
                            Grid.ColumnSpan="2"
                            Margin="10,10,10,00"
                       ItemSelected="EntriesListview_ItemSelected"
-                           IsPullToRefreshEnabled="False"
+                           IsPullToRefreshEnabled="True"
                            Refreshing="EntriesListview_OnRefreshing"
                            ItemsSource="{Binding Diaries}">
                 <ListView.ItemTemplate>
@@ -139,11 +139,10 @@
                      HorizontalOptions="FillAndExpand"/>
 
 
-            <StackLayout HorizontalOptions="CenterAndExpand"
+            <Grid 
                          Grid.Row="4"
                          Grid.ColumnSpan="2"
                          Margin="10,00,10,00"
-                         Orientation="Horizontal"
                          Padding="0"
                          >
 
@@ -152,20 +151,12 @@
                              HorizontalOptions="Center"
                              x:Name="NewEntryImageButton"
                              Padding="0"
-                             Margin="10,00,20,00"
+                             Grid.Column="0"
                              BackgroundColor="Transparent"
                              Clicked="NewEntryImageButton_OnClicked"
                            
                 />
 
-                <ImageButton Source="DiaryCallender22.png"
-                             HorizontalOptions="Center"
-                             x:Name="CalenderImageButton"
-                             Padding="0"
-                             Margin="10,00,20,00"
-                             BackgroundColor="Transparent"
-                           Clicked="CalenderImageButton_OnClicked"
-                />
 
 
 
@@ -174,7 +165,7 @@
                 <ImageButton Source="DiaryList2.png"
                              HorizontalOptions="Center"
                              x:Name="OldEntryImageButton"
-                             Margin="10,00,20,00"
+                             Grid.Column="1"
                              BackgroundColor="Transparent"
                              Clicked="OldEntryImageButton_OnClicked"
                              IsEnabled="False"
@@ -182,22 +173,13 @@
                 />
 
 
-                <ImageButton Source="Mindstate.png"
-                             HorizontalOptions="Center"
-                             x:Name="MoodImageButton"
-                             Margin="10,00,20,00"
-                             BackgroundColor="Transparent"
-                             Clicked="MoodImageButton_OnClicked"
-                            
-                />
-
-
+             
 
 
                 <ImageButton Source="DiaryProfile2.png"
                              HorizontalOptions="Center"
                              x:Name="ProfileImageButton"
-                             Margin="10,00,20,00"
+                             Grid.Column="2"
                             Clicked="ProfileImageButton_OnClicked"
                              BackgroundColor="Transparent"
                              
@@ -206,7 +188,7 @@
 
 
 
-            </StackLayout>
+            </Grid>
 
         </Grid>
 

@@ -15,10 +15,22 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <Image Source="DiaryLogo2.png" 
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               Aspect="AspectFit"/>
+        <StackLayout>
+            <Image Source="DiaryLogo2.png" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit"/>
+
+            <Frame CornerRadius="35"
+                   WidthRequest="5000"
+                   Margin="00,-22,00,00"
+                   HasShadow="false"
+                   BackgroundColor="#FAFAFA"/>
+
+
+        </StackLayout>
+
+        
 
         <StackLayout Orientation="Horizontal"
                      VerticalOptions="Center"
@@ -26,15 +38,15 @@
                      Grid.Row="1"
                      >
             <Button Text="SIGN IN"
-                    BackgroundColor="#2B335C"
-                    TextColor="White"
+                    BorderColor="#2B335C"
+                    TextColor="#2B335C"
                     BorderRadius="20"
                     x:Name="SigninButton"
                     Clicked="SigninButton_Clicked"
                     />
             <Button Text="SIGN UP"
-                    BackgroundColor="#2B335C"
-                    TextColor="White"
+                    BorderColor="#2B335C"
+                    TextColor="#2B335C"
                     BorderRadius="20"
                     x:Name="SignupButton"
                     Clicked="SignupButton_Clicked"

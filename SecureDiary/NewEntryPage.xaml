@@ -66,65 +66,46 @@
                      HorizontalOptions="FillAndExpand"/>
 
 
-            <StackLayout HorizontalOptions="CenterAndExpand"
+            <Grid 
                          Grid.Row="2"
                         
                          Margin="10,00,10,00"
-                         Orientation="Horizontal"
+                       
                          Padding="0"
                          >
 
 
                 <ImageButton Source="Write555.png"
                              HorizontalOptions="Center"
-                             x:Name="NewEntryImageButton"
+                            
                              Padding="0"
-                             Margin="10,00,20,00"
+                            Grid.Column="0"
                              Opacity="0.5"
                              BackgroundColor="Transparent"
                            
                            
                 />
 
-                <ImageButton Source="DiaryCallender22.png"
-                             HorizontalOptions="Center"
-                             x:Name="CalenderImageButton"
-                             Padding="0"
-                             Margin="10,00,20,00"
-                             BackgroundColor="Transparent"
-                             IsEnabled="False"
-                         
-                />
-
-
-
-
-
+           
                 <ImageButton Source="DiaryList2.png"
                              HorizontalOptions="Center"
                              x:Name="OldEntryImageButton"
-                             Margin="10,00,20,00"
+                             Grid.Column="1"
                              BackgroundColor="Transparent"
                            
                 />
 
 
-                <ImageButton Source="Mindstate.png"
-                             HorizontalOptions="Center"
-                             x:Name="MoodImageButton"
-                             Margin="10,00,20,00"
-                             BackgroundColor="Transparent"
+            
                             
-                            
-                />
-
+              
 
 
 
                 <ImageButton Source="DiaryProfile2.png"
                              HorizontalOptions="Center"
                              x:Name="ProfileImageButton"
-                             Margin="10,00,20,00"
+                             Grid.Column="2"
                              BackgroundColor="Transparent"
                              
                             />
@@ -132,7 +113,7 @@
 
 
 
-            </StackLayout>
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
