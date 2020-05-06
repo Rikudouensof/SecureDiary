@@ -23,9 +23,13 @@ namespace SecureDiary
         List<string> FontList = new List<string>()
         {"Pacifico","Yanone","Lazy","None" };
 
-        
-        
-        public EntryDetails( Diary diary)
+        List<FrontAndBackground> FrontAndBackgroundz = new List<FrontAndBackground>();
+        List<FontsandStyles> FontsandStylesz = new List<FontsandStyles>();
+
+
+
+
+        public EntryDetails(Diary diary)
         {
             InitializeComponent();
             _dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "DiarySecure.db3");
@@ -35,7 +39,16 @@ namespace SecureDiary
             var Username = Application.Current.Properties["UserName"].ToString();
             DiaryObject = diary;
             BindingContext = db.Table<Diary>().Where(m => m.Id.Equals(diary.Id)).FirstOrDefault();
-            FontPicker.ItemsSource = FontList;
+            FrontAndBackgroundz.Add(new FrontAndBackground { Text = "Day", Textcolor = Color.FromHex("#2B335C"), Backgroundcolor = Color.LightGray });
+            FrontAndBackgroundz.Add(new FrontAndBackground { Text = "Dark", Textcolor = Color.Black, Backgroundcolor = Color.DarkGray });
+            FrontAndBackgroundz.Add(new FrontAndBackground { Text = "Night", Textcolor = Color.Green, Backgroundcolor = Color.FromHex("#292929") });
+            FrontAndBackgroundz.Add(new FrontAndBackground { Text = "Vintage", Textcolor = Color.FromHex("#ebb37b"), Backgroundcolor = Color.FromHex("#539443") });
+            FrontAndBackgroundz.Add(new FrontAndBackground { Text = "Pidgey", Textcolor = Color.FromHex("#f6edb4"), Backgroundcolor = Color.FromHex("#69482b") });
+            FrontAndBackgroundz.Add(new FrontAndBackground { Text = "Hides", Textcolor = Color.FromHex("#fbf5f2"), Backgroundcolor = Color.FromHex("#e3b9a2") });
+            FrontAndBackgroundz.Add(new FrontAndBackground { Text = "Spice of Life", Textcolor = Color.FromHex("#c8c26c"), Backgroundcolor = Color.FromHex("#b64135") });
+
+            BackgroudDetailsCarouselView.ItemsSource = FrontAndBackgroundz;
+
         }
 
         protected override void OnAppearing()
@@ -47,7 +60,7 @@ namespace SecureDiary
             var Username = Application.Current.Properties["UserName"].ToString();
 
             BindingContext = db.Table<Diary>().Where(m => m.Id.Equals(DiaryObject.Id)).FirstOrDefault();
-        
+
         }
 
         private async void UpdateEntryImageButton_Clicked(object sender, EventArgs e)
@@ -73,12 +86,34 @@ namespace SecureDiary
 
         private void FontPicker_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Button_OnClicked(object sender, EventArgs e)
         {
             TextcontrolFrame.IsVisible = false;
+        }
+
+        private void SelectFontButton_Clicked(object sender, EventArgs e)
+        {
+            var stringInThisCell = (FrontAndBackground)((Button)sender).BindingContext;
+
+            ContentLabelCorasel.TextColor = stringInThisCell.Textcolor;
+            ContentScrollView.BackgroundColor = stringInThisCell.Backgroundcolor;
+            DateLabelCorasel.TextColor = stringInThisCell.Textcolor;
+            TitleLabelCorasel.TextColor = stringInThisCell.Textcolor;
+
+        }
+
+        private void MoreMenuImageButton_png_Clicked(object sender, EventArgs e)
+        {
+
+            TextcontrolFrame.IsVisible = !TextcontrolFrame.IsVisible;
+        }
+
+        private void ChangefontButton_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

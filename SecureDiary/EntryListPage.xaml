@@ -116,7 +116,7 @@
 
                                 <Label Grid.Row="1"
                                        Margin="20"
-                                       Text="{Binding Content}"
+                                       Text="{Binding Title}"
                                        LineBreakMode="WordWrap"
                                        TextColor="#2B335C"/>
 

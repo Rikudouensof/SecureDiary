@@ -34,7 +34,7 @@ namespace SecureDiary
             
 
             var quantico = db.Table<Diary>().Where(m => m.Username.Equals(Username)).ToList();
-            ObservableCollection<Diary> Diaries = new ObservableCollection<Diary>(db.Table<Diary>().Where(m => m.Username.Equals(Username)).ToList());
+            ObservableCollection<Diary> Diaries = new ObservableCollection<Diary>(db.Table<Diary>().Where(m => m.Username.Equals(Username)).OrderByDescending(m => m.DateOEntry).ToList());
 
 
             EntriesListview.ItemsSource = null;

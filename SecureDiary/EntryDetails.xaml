@@ -22,7 +22,8 @@
                      HorizontalOptions="Fill" 
                      HeightRequest="40"/>
 
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal"
+                         >
 
                 <ImageButton Source="LightBackImageButton.png"
                              BackgroundColor="Transparent"
@@ -43,108 +44,133 @@
 
             <ScrollView  Grid.Row="1"
                          HorizontalScrollBarVisibility="Never"
-                         VerticalScrollBarVisibility="Default">
-                <Frame CornerRadius="35"
-                   BorderColor="#2B335C"
-                   BackgroundColor="White"
+                         VerticalScrollBarVisibility="Default"
+                         Grid.RowSpan="2"
+                         BackgroundColor="LightGray"
+                         x:Name="ContentScrollView"
+                         >
+                <StackLayout 
+                   
                    Margin="10"
                   >
-                    <StackLayout 
-
-                         
-                                    Margin="10"
-                                         >
-                        <Label Text="{Binding DateOEntry}"
-                                       x:Name="DateLabelCorasel"
+                    <StackLayout >
+                        <StackLayout Orientation="Horizontal"
+                                     >
+                            <Label Text="{Binding Title}"
+                                       x:Name="TitleLabelCorasel"
                                        TextColor="#2B335C"
                                        FontSize="Title"
                                        FontAttributes="Bold"
-                                       Margin="00,00,00,30"/>
-
-
-
-                        <Label Text="{Binding Title}"
-                                       x:Name="TitleLabelCorasel"
-                                       TextColor="#2B335C"
-                                       FontSize="Subtitle"
-                                       FontAttributes="Bold"
                                        HorizontalTextAlignment="Center"
                                        Margin="00,00,00,-20"
-                                       />
+                                   HorizontalOptions="StartAndExpand"
+                                    FontFamily="{StaticResource Pacifico}"/>
 
-                        <BoxView BackgroundColor="#2B335C" Margin="20" HeightRequest="2"/>
+
+                            <Label Text="{Binding DateOEntry}"
+                                       x:Name="DateLabelCorasel"
+                                       TextColor="#2B335C"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       Margin="00,00,00,30"
+                                FontFamily="{StaticResource Pacifico}"/>
+
+
+                        </StackLayout>
+
 
                         <Label Text="{Binding Content}"
                                        x:Name="ContentLabelCorasel"
                                        TextColor="#2B335C"
-                                       FontSize="Default"
-                                       FontAttributes="Bold"
-                                      FontFamily="{StaticResource Pacifico}"
-                                       />
-
+                                       FontSize="18"
+                                     
+                                         LineBreakMode="WordWrap"
+                                      />
 
 
 
 
                     </StackLayout>
-                </Frame>
+                </StackLayout>
             </ScrollView>
-          
 
-            <BoxView BackgroundColor="White"
-                     Grid.Row="2"
-                     WidthRequest="5000"/>
+
 
 
             <Frame CornerRadius="35"
                    Grid.Row="2"
-                   BackgroundColor="White"
-                   BorderColor="#2B335C"
+                   BackgroundColor="#525252"
+                   BorderColor="#696969"
                    Margin="10"
-                   x:Name="TextcontrolFrame">
-                <StackLayout>
-                    <Button TextColor="Red"
-                           Text="X"
+                   x:Name="TextcontrolFrame"
+                   IsVisible="False"
+                  >
+                <StackLayout  Opacity="50">
+                    <ImageButton Source="DeletzImageButton.png"
                            VerticalOptions="Start"
                            HorizontalOptions="End"
-                           FontSize="Large"
                            BackgroundColor="Transparent"
                            BorderColor="Transparent"
                            Clicked="Button_OnClicked"
                            
                            />
-                    <StackLayout Orientation="Horizontal"
+                    <StackLayout Orientation="Vertical"
                     >
                         <Label Text="Font Size" 
-                               TextColor="#2B335C" 
-                               Opacity="0.7"
-                               FontSize="Title"/>
-                        <Slider Maximum="40"
-                                BindingContext="{x:Reference ContentLabelCorasel}"
-                                Value="{Binding FontSize, Mode=TwoWay}"
-                                WidthRequest="200"/>
-                    </StackLayout>
-
-                    <StackLayout Orientation="Horizontal"
-                                
-                    >
-                        <Label Text="Font " 
-                               TextColor="#2B335C" 
+                               TextColor="LightGray" 
                                Opacity="0.7"
                                FontSize="Title"
-                               />
-
-
-                        <Picker x:Name="FontPicker"
-                                SelectedIndexChanged="FontPicker_OnSelectedIndexChanged"
-                                WidthRequest="200"
-                                IsPlatformEnabled="True"
+                               HorizontalOptions="Start"/>
+                        <Slider Maximum="40"
+                                MaximumTrackColor="DarkGray"
+                                MinimumTrackColor="LightGray"
+                                HorizontalOptions="FillAndExpand"
+                                BindingContext="{x:Reference ContentLabelCorasel}"
+                                Value="{Binding FontSize, Mode=TwoWay}"
+                                
                                 />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical"
+                                 >
+                        <Label Text="Read mode" 
+                               TextColor="LightGray" 
+                               Opacity="0.7"
+                               FontSize="Title"
+                               HorizontalOptions="Start"/>
+                        <CarouselView PeekAreaInsets="30"
+                            HeightRequest="70" 
+                                      x:Name="BackgroudDetailsCarouselView">
+                            <!--<CarouselView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="30"/>
+                            </CarouselView.ItemsLayout>-->
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+
+                                    <Button Text="{Binding Text}"
+                                            BorderColor="#2B335C"
+                                            CornerRadius="8"
+                                                FontSize="Title"
+                                                FontAttributes="Bold"
+                                          
+                                            BackgroundColor="{Binding Backgroundcolor}"
+                                            TextColor="{Binding Textcolor}"
+                                            Clicked="SelectFontButton_Clicked"
+                                            x:Name="SelectFontButton"
+                                             FontFamily="{StaticResource Pacifico}"/>
+
+
+
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+
+                        </CarouselView>
+
                     </StackLayout>
 
 
                 </StackLayout>
-              
+
             </Frame>
 
 
@@ -160,16 +186,25 @@
                              
                              />
 
+
+                <ImageButton Source="MoreImageButtonz.png"
+                             x:Name="MoreImageButton"
+                            Grid.Column="1"
+                            Clicked="MoreMenuImageButton_png_Clicked"
+                             BackgroundColor="Transparent"
+                             
+                             />
+
                 <ImageButton x:Name="DeleteEntryImageButton"
                              Source="DiaryDelete.png"
-                            Grid.Column="1"
+                            Grid.Column="2"
                              Clicked="DeleteEntryImageButton_Clicked"
                              BackgroundColor="Transparent"
                              />
             </Grid>
 
 
-          
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

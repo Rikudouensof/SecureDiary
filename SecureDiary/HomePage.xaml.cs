@@ -33,7 +33,7 @@ namespace SecureDiary
             LastNameLabel.Text = Livecontext.LastName;
             FirstnameLabel.Text = Livecontext.FirstName;
 
-            ObservableCollection<Diary> Diaries = new ObservableCollection<Diary>(db.Table<Diary>().Where(m =>  m.Username.Equals(Username)).Take(8).ToList());
+            ObservableCollection<Diary> Diaries = new ObservableCollection<Diary>(db.Table<Diary>().Where(m => m.Username.Equals(Username)).OrderByDescending(m => m.DateOEntry).ToList());
 
             var quantico = db.Table<Diary>().Where(m =>m.Username.Equals(Username)).Take(8).ToList();
 
