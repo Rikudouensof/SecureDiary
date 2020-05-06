@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="SecureDiary.EntryDetails"
              NavigationPage.HasBackButton="True"
+               BackgroundColor="LightGray"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid>
@@ -20,7 +21,7 @@
 
             <BoxView Color="#2B335C" 
                      HorizontalOptions="Fill" 
-                     HeightRequest="40"/>
+                    />
 
             <StackLayout Orientation="Horizontal"
                          >
@@ -48,10 +49,11 @@
                          Grid.RowSpan="2"
                          BackgroundColor="LightGray"
                          x:Name="ContentScrollView"
+                         VerticalOptions="FillAndExpand"
                          >
                 <StackLayout 
                    
-                   Margin="10"
+                   Margin="10,00"
                   >
                     <StackLayout >
                         <StackLayout Orientation="Horizontal"

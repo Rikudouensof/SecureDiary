@@ -118,12 +118,12 @@
                          Margin="10,10,10,00"
                          
             >
-                <Label Text="20/05/2021"
+                <Label Text="Entry by (Rikudou En Sof) "
                        FontSize="Title"
                        FontAttributes="Bold"
                        TextColor="#2B335C"/>
 
-                <Label Text="Seminar Home for the outstanding peace, and infinite peace"
+                <Label Text="Your home could be a house, but it is truely where you wish to be and still be yourself"
                        FontSize="Subtitle"
                        FontAttributes="Bold"
                        LineBreakMode="WordWrap"
@@ -142,68 +142,78 @@
 
 
 
-            
-           
-
-
-          
 
 
 
-           
 
-            <ListView x:Name="TheOldPostSLider"
-                           HasUnevenRows="True"
+
+
+            <StackLayout    
                           Grid.Row="3"
                            Grid.ColumnSpan="2"
-                           Margin="10,10,10,00"
+                           Margin="10,10,10,00">
+
+                <Label HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       FontAttributes="Bold"
+                       x:Name="ContentCHeckerLabel"
+                       Text="Pull to refresh"/>
+                
+                <ListView x:Name="TheOldPostSLider"
+                        HasUnevenRows="True"
+                      HorizontalOptions="FillAndExpand"
                       ItemSelected="TheOldPostSLider_ItemSelected"
                            IsPullToRefreshEnabled="true"
                            Refreshing="TheOldPostSLider_OnRefreshing"
                            ItemsSource="{Binding Diaries}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
 
 
-                            <Grid 
+                                <Grid 
                             >
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
 
 
-                                <StackLayout HorizontalOptions="Start"
+                                    <StackLayout HorizontalOptions="Start"
                                              Orientation="Horizontal">
 
 
-                                    <Label Text="{Binding DateOEntry}"
+                                        <Label Text="{Binding DateOEntry}"
                                            FontSize="Body"
                                            FontAttributes="Bold"
                                            Margin="00,08,00,00"
                                            Opacity="0.5"
                                            TextColor="#2B335C"/>
-                                </StackLayout>
+                                    </StackLayout>
 
 
-                                <BoxView CornerRadius="8"
+                                    <BoxView CornerRadius="8"
                                          Grid.Row="1"
                                          BackgroundColor="White"/>
 
 
-                                <Label Grid.Row="1"
+                                    <Label Grid.Row="1"
                                        Margin="20"
                                        Text="{Binding Title}"
                                        LineBreakMode="WordWrap"
                                        TextColor="#2B335C"/>
 
 
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+           
+
+          
 
 
 
@@ -225,44 +235,85 @@
                          Padding="0"
                          >
 
+                <StackLayout   Grid.Column="0" >
 
-                <ImageButton Source="Write555.png"
+
+                    <ImageButton Source="Write555.png"
                              HorizontalOptions="Center"
                              x:Name="NewEntryImageButton"
                              Padding="0"
-                            Grid.Column="0"
+                           
                              BackgroundColor="Transparent"
                              Clicked="NewEntryImageButton_Clicked"
-                           
-                />
+                                />
+
+                    <Label Text="New entry" TextColor="#2B335C"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"/>
+
+                </StackLayout>
+
+
+                <StackLayout  Grid.Column="1">
+                    <ImageButton Source="HomePageImageButtonz.png"
+                             HorizontalOptions="Center"
+                             x:Name="HomeImageButtom"
+                           Opacity="0.5"
+                             BackgroundColor="Transparent"
+                             Clicked="HomeImageButtom_Clicked"/>
+
+
+
+                    <Label Text="Home" TextColor="#2B335C"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"/>
+
+                </StackLayout>
 
 
 
 
-
-
-                <ImageButton Source="DiaryList2.png"
+                <StackLayout  Grid.Column="2">
+                    <ImageButton Source="DiaryList2.png"
                              HorizontalOptions="Center"
                              x:Name="OldEntryImageButton"
-                            Grid.Column="1"
+                           
                              BackgroundColor="Transparent"
                              Clicked="OldEntryImageButton_Clicked"
-                />
-
-
-            
+                                />
 
 
 
+                    <Label Text="View entries" TextColor="#2B335C"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"/>
 
-                <ImageButton Source="DiaryProfile2.png"
+                </StackLayout>
+
+
+
+
+                <StackLayout  Grid.Column="3" >
+
+                    <ImageButton Source="DiaryProfile2.png"
                              HorizontalOptions="Center"
                              x:Name="ProfileImageButton"
-                             Grid.Column="2"
+                            
                             Clicked="ProfileImageButton_Clicked"
                              BackgroundColor="Transparent"
                              
                             />
+
+
+                    <Label Text="Profiles" TextColor="#2B335C"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"/>
+
+                </StackLayout>
+
+
+
+               
 
 
 

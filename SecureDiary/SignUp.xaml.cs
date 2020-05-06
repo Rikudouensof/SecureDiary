@@ -55,6 +55,8 @@ namespace SecureDiary
                         Password = PasswordEntry.Text
                     };
                     db.Insert(account);
+                    await DisplayAlert("message", "Account created", "Ok");
+                    await DisplayAlert("caution", " Please note that the only way for you to retrive this account is though your hint", "Ok");
                     await Navigation.PushAsync(new MainPage());
                 }
             }

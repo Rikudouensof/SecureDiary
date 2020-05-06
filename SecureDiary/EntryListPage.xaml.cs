@@ -24,6 +24,20 @@ namespace SecureDiary
         public EntryListPage()
         {
             InitializeComponent();
+
+
+            StartPageData();
+
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            StartPageData();
+        }
+
+        private void StartPageData()
+        {
             _dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "DiarySecure.db3");
             var db = new SQLiteConnection(_dbPath);
             db.CreateTable<Account>();
@@ -31,7 +45,7 @@ namespace SecureDiary
             var Username = Application.Current.Properties["UserName"].ToString();
             Account Livecontext = db.Table<Account>().Where(m => m.UserName.Equals(Username)).FirstOrDefault();
             string dispUername = "@" + Livecontext.UserName;
-            
+
 
             var quantico = db.Table<Diary>().Where(m => m.Username.Equals(Username)).ToList();
             ObservableCollection<Diary> Diaries = new ObservableCollection<Diary>(db.Table<Diary>().Where(m => m.Username.Equals(Username)).OrderByDescending(m => m.DateOEntry).ToList());
@@ -39,7 +53,6 @@ namespace SecureDiary
 
             EntriesListview.ItemsSource = null;
             EntriesListview.ItemsSource = Diaries;
-
         }
 
         private void FilterListSerchbar_TextChanged(object sender, TextChangedEventArgs e)
@@ -71,7 +84,7 @@ namespace SecureDiary
             db.CreateTable<Account>();
             db.CreateTable<Diary>();
             var Username = Application.Current.Properties["UserName"].ToString();
-            var quantico = db.Table<Diary>().Where(m => m.Username.Equals(Username)).Take(8).ToList();
+            var quantico = db.Table<Diary>().Where(m => m.Username.Equals(Username)).OrderByDescending(m => m.DateOEntry).ToList();
 
             EntriesListview.ItemsSource = null;
             EntriesListview.ItemsSource = quantico;
@@ -94,6 +107,11 @@ namespace SecureDiary
         private async void ProfileImageButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ProfilePage());
+        }
+
+        private async void HomeImageButtom_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HomePage());
         }
     }
 }

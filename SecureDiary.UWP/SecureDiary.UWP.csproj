@@ -146,6 +146,8 @@
     <Content Include="DiaryUpdate.png" />
     <Content Include="DiaryWrite2.png" />
     <Content Include="DiaryWrite33.png" />
+    <Content Include="HomePageImageButton.png" />
+    <Content Include="HomePageImageButtonz.png" />
     <Content Include="icon.png" />
     <Content Include="image_part_001.png" />
     <Content Include="image_part_002.png" />

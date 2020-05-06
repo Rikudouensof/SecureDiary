@@ -49,7 +49,7 @@ namespace SecureDiary
                         string hint = db.Table<Account>().Where(rd => rd.UserName == UsernameEntry.Text).Select(ss => ss.Hint).ToString();
                         if (UsernameEntry.Text == MaxPk.UserName && PasswordEntry.Text != MaxPk.Password)
                         {
-                            ErrorLabel.Text = MaxPk.Hint;
+                            ErrorLabel.Text = "Hint: " + MaxPk.Hint;
                             ErrorLabel.IsVisible = true;
                         }
                         else

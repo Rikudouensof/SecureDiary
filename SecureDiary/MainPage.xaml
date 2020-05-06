@@ -38,8 +38,8 @@
                      Grid.Row="1"
                      >
             <Button Text="SIGN IN"
-                    BorderColor="#2B335C"
-                    TextColor="#2B335C"
+                    BackgroundColor="#2B335C"
+                    TextColor="White"
                     BorderRadius="20"
                     x:Name="SigninButton"
                     Clicked="SigninButton_Clicked"

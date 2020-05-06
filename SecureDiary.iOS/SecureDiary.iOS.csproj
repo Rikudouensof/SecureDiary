@@ -282,4 +282,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\DeletzImageButton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HomePageImageButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HomePageImageButtonz.png" />
+  </ItemGroup>
 </Project>

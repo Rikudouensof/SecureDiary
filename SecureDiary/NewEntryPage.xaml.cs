@@ -42,10 +42,30 @@ namespace SecureDiary
 
             };
             db.Insert(toSaveDIary);
+            await DisplayAlert("message", "Entry saved", "Ok");
             await Navigation.PopAsync();
 
         }
 
-    
+
+        private async void NewEntryImageButton_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("message", "You are already in New Entry Page", "Ok");
+        }
+
+        private async void HomeImageButtom_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HomePage());
+        }
+
+        private async void OldEntryImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EntryListPage());
+        }
+
+        private async void ProfileImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProfilePage());
+        }
     }
 }

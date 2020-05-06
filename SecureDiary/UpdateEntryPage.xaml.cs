@@ -44,6 +44,7 @@ namespace SecureDiary
 
             };
             db.Update(toSaveDIary);
+            await DisplayAlert("message", "Entry updated", "Ok");
             await Navigation.PopAsync();
 
         }

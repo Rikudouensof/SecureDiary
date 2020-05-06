@@ -44,7 +44,7 @@ namespace SecureDiary
 
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
             var Username = Application.Current.Properties["UserName"].ToString();
             _dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "DiarySecure.db3");
@@ -54,6 +54,7 @@ namespace SecureDiary
             wordica.Password = ChangePasswordEntry.Text;
             wordica.Hint = ChangeHintEntry.Text;
             db.Update(wordica);
+            await DisplayAlert("message", "Account updated", "Ok");
         }
 
         private void ChangePasswordEntry_PropertyChanging(object sender, PropertyChangingEventArgs e)
@@ -90,7 +91,12 @@ namespace SecureDiary
 
         private async void ProfileImageButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ProfilePage());
+            await DisplayAlert("message", "You are already in profile page", "Ok");
+        }
+
+        private async void HomeImageButtom_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HomePage());
         }
     }
 }

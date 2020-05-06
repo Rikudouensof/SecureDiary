@@ -23,6 +23,19 @@ namespace SecureDiary
         public HomePage()
         {
             InitializeComponent();
+
+           
+
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Parsedate();
+        }
+
+        private void Parsedate()
+        {
             _dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "DiarySecure.db3");
             var db = new SQLiteConnection(_dbPath);
             db.CreateTable<Account>();
@@ -33,12 +46,22 @@ namespace SecureDiary
             LastNameLabel.Text = Livecontext.LastName;
             FirstnameLabel.Text = Livecontext.FirstName;
 
-            ObservableCollection<Diary> Diaries = new ObservableCollection<Diary>(db.Table<Diary>().Where(m => m.Username.Equals(Username)).OrderByDescending(m => m.DateOEntry).ToList());
+            ObservableCollection<Diary> Diaries = new ObservableCollection<Diary>(db.Table<Diary>().Where(m => m.Username.Equals(Username)).OrderByDescending(m => m.DateOEntry).Take(8).ToList());
 
-            var quantico = db.Table<Diary>().Where(m =>m.Username.Equals(Username)).Take(8).ToList();
+            var quantico = db.Table<Diary>().Where(m => m.Username.Equals(Username)).Take(8).ToList();
 
             TheOldPostSLider.ItemsSource = null;
             TheOldPostSLider.ItemsSource = Diaries;
+            if (Diaries.Count() < 1)
+            {
+                ContentCHeckerLabel.FontSize = 23;
+                ContentCHeckerLabel.Text = "No personal entries found";
+            }
+            else
+            {
+                ContentCHeckerLabel.Text = "Pull to refresh";
+                ContentCHeckerLabel.FontSize = 16;
+            }
 
 
             //quantico.Where(m =>m.Content.Length.Equals(30))
@@ -55,7 +78,7 @@ namespace SecureDiary
                     // interact with UI elements
                     TimeDateLabel.Text = DateTime.Now.ToString("HH:mm:ss");
 
-                  
+
 
                 });
                 return true; // runs again, or false to stop
@@ -100,7 +123,6 @@ namespace SecureDiary
 
 
 
-
         }
 
         private async void NewEntryImageButton_Clicked(object sender, EventArgs e)
@@ -130,7 +152,7 @@ namespace SecureDiary
             db.CreateTable<Account>();
             db.CreateTable<Diary>();
             var Username = Application.Current.Properties["UserName"].ToString();
-            var quantico = db.Table<Diary>().Where(m => m.Username.Equals(Username)).Take(8).ToList();
+            var quantico = db.Table<Diary>().Where(m => m.Username.Equals(Username)).OrderByDescending(m => m.DateOEntry).Take(8).ToList();
 
             TheOldPostSLider.ItemsSource = null;
             TheOldPostSLider.ItemsSource = quantico;
@@ -144,6 +166,11 @@ namespace SecureDiary
         private void MoodImageButton_OnClicked(object sender, EventArgs e)
         {
             
+        }
+
+        private void HomeImageButtom_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
