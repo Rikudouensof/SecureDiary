@@ -8,6 +8,9 @@
            
               NavigationPage.HasBackButton="False"
              NavigationPage.HasNavigationBar="False">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" WinPhone="20,20,20,20" />
+    </ContentPage.Padding>
     <ContentPage.Content>
         <Grid>
 
