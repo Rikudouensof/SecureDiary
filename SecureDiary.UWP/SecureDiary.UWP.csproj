@@ -132,6 +132,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="Calender.png" />
+    <Content Include="DeleteFileImageButton.png" />
     <Content Include="DeletzImageButton.png" />
     <Content Include="DiaryCallender22.png" />
     <Content Include="DiaryDate.png" />
@@ -176,9 +177,11 @@
     <Content Include="image_part_025.png" />
     <Content Include="LightBackImageButton.png" />
     <Content Include="Mindstate.png" />
+    <Content Include="MoreImageButton.png" />
     <Content Include="MoreImageButtonz.png" />
     <Content Include="ProfileImage.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="UpdateImageButton.png" />
     <Content Include="Write555.png" />
   </ItemGroup>
   <ItemGroup>

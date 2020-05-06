@@ -190,7 +190,7 @@
                 <StackLayout Grid.Column="0">
 
                     <ImageButton x:Name="UpdateEntryImageButton"
-                             Source="DiaryUpdate.png"
+                             Source="UpdateImageButton.png"
                            
                              Clicked="UpdateEntryImageButton_Clicked"
                              BackgroundColor="Transparent"
@@ -205,7 +205,7 @@
                 </StackLayout>
 
                 <StackLayout  Grid.Column="1"  >
-                    <ImageButton Source="MoreImageButtonz.png"
+                    <ImageButton Source="MoreImageButton.png"
                              x:Name="MoreImageButton"
                            
                             Clicked="MoreMenuImageButton_png_Clicked"
@@ -224,7 +224,7 @@
 
                 <StackLayout  Grid.Column="2" >
 
-                    <ImageButton x:Name="DeleteEntryImageButton"
+                    <ImageButton x:Name="DeleteFileImageButton"
                              Source="DiaryDelete.png"
                            
                              Clicked="DeleteEntryImageButton_Clicked"

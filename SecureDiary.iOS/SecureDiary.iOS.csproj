@@ -288,4 +288,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\HomePageImageButtonz.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\UpdateImageButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DeleteFileImageButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MoreImageButton.png" />
+  </ItemGroup>
 </Project>
