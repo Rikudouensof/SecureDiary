@@ -6,6 +6,9 @@
              mc:Ignorable="d"
              x:Class="SecureDiary.ProfilePage"
               NavigationPage.HasBackButton="False"
+              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             Title="Safe Area"
+             ios:Page.UseSafeArea="true"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Padding>

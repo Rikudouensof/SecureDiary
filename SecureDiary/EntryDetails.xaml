@@ -7,6 +7,9 @@
              x:Class="SecureDiary.EntryDetails"
              NavigationPage.HasBackButton="True"
                BackgroundColor="LightGray"
+              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             Title="Safe Area"
+             ios:Page.UseSafeArea="true"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" WinPhone="20,20,20,20" />
