@@ -94,6 +94,7 @@
 
                     <Label Text="New entry" TextColor="#2B335C"
                            HorizontalOptions="Center"
+                           FontSize="Micro"
                            VerticalOptions="End"/>
 
                 </StackLayout>
@@ -111,6 +112,7 @@
 
                     <Label Text="Home" TextColor="#2B335C"
                            HorizontalOptions="Center"
+                           FontSize="Micro"
                            VerticalOptions="End"/>
 
                 </StackLayout>
@@ -129,8 +131,9 @@
 
 
 
-                    <Label Text="View entries" TextColor="#2B335C"
+                    <Label Text="View" TextColor="#2B335C"
                            HorizontalOptions="Center"
+                           FontSize="Micro"
                            VerticalOptions="End"/>
 
                 </StackLayout>
@@ -152,6 +155,7 @@
 
                     <Label Text="Profiles" TextColor="#2B335C"
                            HorizontalOptions="Center"
+                           FontSize="Micro"
                            VerticalOptions="End"/>
 
                 </StackLayout>

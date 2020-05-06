@@ -186,29 +186,62 @@
                          BackgroundColor="Transparent"
                          Grid.Row="3"
                         >
-                <ImageButton x:Name="UpdateEntryImageButton"
+
+                <StackLayout Grid.Column="0">
+
+                    <ImageButton x:Name="UpdateEntryImageButton"
                              Source="DiaryUpdate.png"
-                            Grid.Column="0"
+                           
                              Clicked="UpdateEntryImageButton_Clicked"
                              BackgroundColor="Transparent"
                              
                              />
 
+                    <Label Text="Update" TextColor="#2B335C"
+                           HorizontalOptions="Center"
+                           FontSize="Micro"
+                           VerticalOptions="End"/>
 
-                <ImageButton Source="MoreImageButtonz.png"
+                </StackLayout>
+
+                <StackLayout  Grid.Column="1"  >
+                    <ImageButton Source="MoreImageButtonz.png"
                              x:Name="MoreImageButton"
-                            Grid.Column="1"
+                           
                             Clicked="MoreMenuImageButton_png_Clicked"
                              BackgroundColor="Transparent"
                              
                              />
 
-                <ImageButton x:Name="DeleteEntryImageButton"
+
+                    <Label Text="More" TextColor="#2B335C"
+                           HorizontalOptions="Center"
+                           FontSize="Micro"
+                           VerticalOptions="End"/>
+
+                </StackLayout>
+
+
+                <StackLayout  Grid.Column="2" >
+
+                    <ImageButton x:Name="DeleteEntryImageButton"
                              Source="DiaryDelete.png"
-                            Grid.Column="2"
+                           
                              Clicked="DeleteEntryImageButton_Clicked"
                              BackgroundColor="Transparent"
                              />
+
+
+                    <Label Text="Delete" TextColor="#2B335C"
+                           HorizontalOptions="Center"
+                           FontSize="Micro"
+                           VerticalOptions="End"/>
+
+                </StackLayout>
+
+
+
+              
             </Grid>
 
 
