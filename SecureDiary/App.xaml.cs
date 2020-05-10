@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,8 +9,14 @@ namespace SecureDiary
     {
         public App()
         {
-            InitializeComponent();
 
+            InitializeComponent();
+            Device.SetFlags(new[]
+            {
+                "SwipeView_Experimental",
+                "CarouelView_Experimental",
+                "IndicatorView_Experimental"
+            });
             MainPage = new NavigationPage(new MainPage());
         }
 

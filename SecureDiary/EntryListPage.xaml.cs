@@ -45,6 +45,8 @@ namespace SecureDiary
             var Username = Application.Current.Properties["UserName"].ToString();
             Account Livecontext = db.Table<Account>().Where(m => m.UserName.Equals(Username)).FirstOrDefault();
             string dispUername = "@" + Livecontext.UserName;
+            FirstnameLabel.Text = Livecontext.FirstName;
+            LastNameLabel.Text = Livecontext.LastName;
 
 
             var quantico = db.Table<Diary>().Where(m => m.Username.Equals(Username)).ToList();
